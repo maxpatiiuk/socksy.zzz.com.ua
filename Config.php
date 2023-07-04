@@ -9,13 +9,13 @@ class Config {
 	public const _DEVELOPMENT_ = true;
 	public const _HTTPS_ = false;
 	public const _HTTP_LINK_ = 'http';
-	public const _LINK_ = self::_HTTP_LINK_.'://socksy.zzz.com.ua/';
+	public const _LINK_ = self::_HTTP_LINK_.'://socksy.in.ua/';
 	public const _NAME_ = 'SOCKSY ЛЬОН';
 	public const _TITLE_ = self::_NAME_;
 	public const _KEYWORDS_ = self::_NAME_ . ' - шкарпетки та текстиль';
 	public const _DESCRIPTION_ = 'шкарпетки, текстиль, ' . self::_AUTHOR_;
 	public const _AUTHOR_ = 'Max Patiiuk';
-	public const _EMAIL_ = 'info@socksy.zzz.com.ua';
+	public const _EMAIL_ = 'info@socksy.in.ua';
 	public const _REAL_EMAIL_ = 'redacted@pati.uk';
 	public const _ADMIN_EMAIL_ = 'redacted@patii.uk';
 	public const _BRAND_COLOR_ = '#ffaa11';

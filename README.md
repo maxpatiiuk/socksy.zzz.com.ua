@@ -1,4 +1,4 @@
-# socksy.zzz.com.ua
+# socksy.in.ua
 
 This website was developed in 2019 for my parent's shop.
 

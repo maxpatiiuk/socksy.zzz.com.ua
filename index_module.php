@@ -1,4 +1,4 @@
-<!-- Developed by mambo (https://mambo.in.ua) -->
+<!-- Developed by Max Patiiuk (https://max.patii.uk) -->
 <!DOCTYPE html>
 <html lang="<?= Config::_LANGUAGE_ ?>">
 <head>
@@ -15,7 +15,7 @@
 	<meta name="apple-mobile-web-app-title" content="<?= Config::_NAME_ ?>">
 	<meta name="application-name" content="<?= Config::_NAME_ ?>">
 	<meta name="msapplication-config" content="<?= Config::_LINK_ ?>browserconfig.xml">
-	<meta name="msapplication-TileImage" content="http://data.mambo.in.ua/public/images/icons/android-icon-144x144.png">
+	<meta name="msapplication-TileImage" content="<?= Config::_LINK_ ?>public/images/icons/android-icon-144x144.png">
 	<meta name="keywords" content="<?= Config::_KEYWORDS_ ?>">
 	<meta name="description" content="<? Config::_DESCRIPTION_ ?>">
 	<title><?= Config::_TITLE_ ?></title>
