@@ -1,0 +1,10 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ index.php [NC,L,QSA]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www. [NC]
+RewriteRule ^ http://%1%{REQUEST_URI} [L,NE,R=301]

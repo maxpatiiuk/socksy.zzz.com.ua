@@ -1,0 +1,452 @@
+/* MAIN */
+
+:root {
+	--main_color: #fff;
+	transition: 0.3s;
+}
+
+/*.fp-viewing-cover {
+	--main_color: #000;
+}
+
+.fp-viewing-cover #menu_sm_links {
+	filter: none;
+}*/
+
+.async-hide {
+	opacity: 0 !important;
+}
+
+::selection {
+	color: #fff;
+	background: #f00;
+}
+
+.navbar-light .navbar-toggler {
+	filter: invert(100%);
+	z-index: 2;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+	background: var(--main_color) !important;
+}
+
+video {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	/*background-image: !* our video *!;*/
+	background-position: center center;
+	background-size: contain;
+	object-fit: cover;
+	z-index:3;
+	filter: blur(10px);
+}
+
+video::-webkit-media-controls {
+	display:none !important;
+}
+
+.content {
+	position: relative;
+	z-index: 4;
+}
+
+#arrow_down {
+	position: absolute;
+	bottom: 20px;
+	left: calc(50vw - 20px);
+	z-index: 4;
+	width: 40px;
+	animation: swing 2s ease 0s infinite normal forwards;
+	transition: 0.5s;
+	opacity: 1;
+}
+
+#arrow_down.hide_animation {
+	opacity: 0;
+}
+
+@keyframes swing {
+	from {
+		bottom: 20px;
+	}
+	60% {
+		bottom: 20px;
+	}
+	80% {
+		bottom: 40px;
+	}
+	to {
+		bottom: 20px;
+	}
+}
+
+
+/* MENU */
+
+#menu {
+	position: fixed;
+	top: 0;
+	list-style: none;
+}
+
+#navbarSupportedContent.show {
+	background: #000;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 45px;
+	z-index: 1;
+}
+
+#menu li.active {
+	border-bottom: 1px solid var(--main_color);
+}
+
+#menu a {
+	color: var(--main_color);
+	font-size: 1.1rem;
+}
+
+#menu li:not(#menu_sm_links) a {
+	padding: 1rem;
+}
+
+#menu li.active {
+	cursor: default;
+}
+
+#menu_sm_links {
+	position: fixed;
+	top: 1.5rem;
+	right: 2rem;
+}
+
+div.show #menu_sm_links {
+	position: static;
+	padding: 1rem;
+}
+
+
+/* CONTENT */
+
+.section {
+	text-align: center;
+	color: var(--main_color);
+}
+
+
+/* SOCKSY*/
+
+.page_content {
+	margin: 0 auto;
+	position: relative;
+}
+
+
+@media screen and (orientation: portrait) {
+	.page_content {
+		width: calc(100% - 60px);
+		height: 0;
+		padding-top: 100%;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	.page_content {
+		width: 70vh;
+		height: 70vh;
+	}
+}
+
+.page_content > div {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(3,1fr);
+	grid-gap: 30px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+#page_socksy {
+	grid-template-areas:
+			'woman socksy socksy'
+			'man . children'
+			'. tights_children tights_woman';
+}
+
+#page_linen {
+	grid-template-areas:
+			'linen linen tablecloth'
+			'path embroidery clothing'
+			'towel plaids lace';
+}
+
+.page_content > div > * {
+	transition: 0.5s;
+	background: #888;
+	width: 100%;
+	height: 0;
+	padding-top: 100%;
+	object-fit: cover;
+	position: relative;
+	border: 5px solid var(--main_color);/* ??? */
+}
+
+.page_content > div *:hover {
+	color: #ccc;
+	border-color: #ccc;
+	text-decoration: none;
+}
+
+.page_content > div > *:after {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+	color: #fff;
+	font-size: 24px;
+	transition: inherit;
+}
+
+.page_content > div > *:not(:hover):after {
+	opacity: 0;
+}
+
+.page_content > div > *:first-child {
+	text-align: left;
+	background: #000;
+}
+
+.page_content > div > *:first-child * {
+	padding-left: 1vh;
+	height: auto;
+	top: unset;
+	background: none;
+}/*
+
+.page_content > div > *:last-child {
+	text-align: right;
+	background: #000;
+}
+
+.page_content > div > *:last-child * {
+	padding-right: 2.4vh;
+	height: auto;
+	background: none;
+	font-family: 'Calibri',sans-serif;
+}*/
+
+.page_content > div * * {
+	background: #000;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	color: var(--main_color);
+	cursor: pointer;
+	font-size: 6vh;
+	object-fit: cover;
+	transition: inherit;
+}
+
+.page_content > div > *:hover img {
+	filter: blur(10px) brightness(0.5);
+	color: #cccccc;
+}
+
+.grid_cell_socksy, .grid_cell_linen {
+	padding-top: calc(50% - 15px) !important;
+}
+
+.grid_cell_socksy {
+	grid-area: socksy;
+}
+
+.grid_cell_man {
+	grid-area: man;
+}
+.grid_cell_man:after {
+	content: 'Чоловіче';
+}
+
+.grid_cell_woman {
+	grid-area: woman;
+}
+.grid_cell_woman:after {
+	content: 'Жіночі шкарпетки';
+}
+
+.grid_cell_children {
+	grid-area: children;
+}
+.grid_cell_children:after {
+	content: 'Дитячі шкарпетки';
+}
+
+.grid_cell_tights_children {
+	grid-area: tights_children;
+}
+.grid_cell_tights_children:after {
+	content: 'Дитячі колготи';
+}
+
+.grid_cell_tights_woman {
+	grid-area: tights_woman;
+}
+.grid_cell_tights_woman:after {
+	content: 'Жіночі колготи';
+}
+
+.grid_cell_linen {
+	grid-area: linen;
+}
+
+.grid_cell_tablecloth {
+	grid-area: tablecloth;
+}
+.grid_cell_tablecloth:after {
+	content: 'Скатертини';
+}
+
+.grid_cell_path {
+	grid-area: path;
+}
+.grid_cell_path:after {
+	content: 'Доріжки';
+}
+
+.grid_cell_towel {
+	grid-area: towel;
+}
+.grid_cell_towel:after {
+	content: 'Рушники';
+}
+
+.grid_cell_clothing {
+	grid-area: clothing;
+}
+.grid_cell_clothing:after {
+	content: 'Одяг';
+}
+
+.grid_cell_embroidery {
+	grid-area: embroidery;
+}
+.grid_cell_embroidery:after {
+	content: 'Вишиванки';
+}
+
+.grid_cell_plaids {
+	grid-area: plaids;
+}
+.grid_cell_plaids:after {
+	content: 'Постіль';
+}
+
+.grid_cell_lace {
+	grid-area: lace;
+}
+.grid_cell_lace:after {
+	content: 'Мереживо';
+}
+
+
+
+/* CONTACTS SECTION */
+
+/* contacts_main */
+#contact_section {
+	width: 100%;
+	padding: 15px;
+	max-width: 1000px;
+	display: flex;
+	margin: 0 auto;
+}
+
+#contact_section > .contacts_col {
+	flex: 1;
+	padding: 15px;
+}
+
+/* contacts_col_1 */
+
+
+/* contacts_col_2 */
+#contacts_col_2 iframe {
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+/* contacts_col_3 */
+#contacts_col_3 {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: stretch;
+}
+
+.cover_sm {
+	display: flex;
+	align-items: center;
+	transition: 0.3s;
+	flex: 1;
+}
+
+#menu_sm_links svg, .cover_sm svg {
+	width: 30px;
+	height: 30px;
+	fill: var(--main_color);
+	margin: 0 auto;
+}
+
+.cover_sm:hover {
+	filter: brightness(1.5);
+}
+
+#facebook_cover_sm {
+	background: #359;
+}
+
+#instagram_cover_sm {
+	background: #83b;
+}
+
+#youtube_cover_sm {
+	background: #c32;
+}
+
+@media (max-width: 991px){
+
+	#contact_section {
+		flex-direction: column;
+		max-width: 500px;
+	}
+
+	.contacts_col {
+		margin-bottom: 30px;
+		min-height: 400px;
+	}
+
+	#contacts_col_2 iframe {
+		height: 400px;
+	}
+
+}
